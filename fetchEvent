@@ -1,0 +1,10 @@
+from pymisp import PyMISP, MISPEvent
+misp_url='https://localhost:8443/'
+misp_key= 'mido1GDovbeloNmqv3gXEo1F9AtA8arKbPRLQDAR'
+misp_verifycert=False
+
+eventid='13'
+event = misp.get_event(eventid)
+
+print(event)
+
