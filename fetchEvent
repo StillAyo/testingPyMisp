@@ -1,10 +1,16 @@
 from pymisp import PyMISP, MISPEvent
-misp_url='https://localhost:8443/'
-misp_key= 'mido1GDovbeloNmqv3gXEo1F9AtA8arKbPRLQDAR'
-misp_verifycert=False
+misp_url = 'https://localhost:8443/'
+misp_key = 'mido1GDovbeloNmqv3gXEo1F9AtA8arKbPRLQDAR'
+misp_verifycert = False
 
-eventid=13
-event = PyMISP.get_event(13)
 
-print(event)
+def init(url, key):
+    return PyMISP(url, key, misp_verifycert, 'json', debug=True)
 
+
+if __name__ == '__main__':
+    misp = init(misp_url, misp_key)
+    
+    event = misp.get_event(13)
+    
+    print(event)
